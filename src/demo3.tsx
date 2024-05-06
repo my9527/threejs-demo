@@ -191,7 +191,7 @@ const Model = React.forwardRef((props: PrimitiveProps, ref: any) => {
                 object={targetScene} 
                 scale={10} 
                 
-                onClick={() => onClick(new THREE.Vector3(position[0], position[1], position[2]))} position={position} 
+                onClick={() => onClick(position[0], position[1], position[2])} position={position} 
             />;
 });
 
@@ -630,7 +630,7 @@ const Scene = ({ handleBack }: { handleBack?: any}) => {
                 <Model
                     onCenter={handleCenter}
                     ref={modelRef}
-                    onClick={(center: number[]) => {
+                    onClick={(...center: number[]) => {
                         positionRef.current = center;
                         updatePositionState(center);
                     }}
@@ -640,7 +640,7 @@ const Scene = ({ handleBack }: { handleBack?: any}) => {
                 <Model
                     onCenter={handleCenter}
                     ref={mesh1Ref}
-                    onClick={(center: number[]) => {
+                    onClick={(...center: number[]) => {
                         positionRef.current = center;
                         updatePositionState(center);
                     }}
@@ -650,7 +650,7 @@ const Scene = ({ handleBack }: { handleBack?: any}) => {
                 <Model
                     onCenter={handleCenter}
                     ref={mesh2Ref}
-                    onClick={(center: number[]) => {
+                    onClick={(...center: number[]) => {
                         positionRef.current = center;
                         updatePositionState(center);
                     }}
