@@ -422,7 +422,7 @@ const Scene = ({ handleBack }: { handleBack?: any}) => {
 
     useEffect(() => {
         if (positionRef.current && positionRef.current.length && controlRef.current) {
-            const aVectors = new THREE.Vector3(positionRef.current.x + 10, positionRef.current.y, 30);
+            const aVectors = new THREE.Vector3(positionRef.current[0] + 10, positionRef.current[1], 30);
             
             const distance = cameraRef.current.position.distanceTo(aVectors);
             // cameraRef.current.target.position.lerp(targetPosition.current, 0.05);
